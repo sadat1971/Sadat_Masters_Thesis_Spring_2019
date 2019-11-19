@@ -1,0 +1,249 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Masters Thesis 
+% LaTeX Template
+% Version 2.5 (27/8/17)
+%
+% This template was downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Version 2.x major modifications by:
+% Vel (vel@latextemplates.com)
+%
+% This template is based on a template by:
+% Steve Gunn (http://users.ecs.soton.ac.uk/srg/softwaretools/document/templates/)
+% Sunil Patel (http://www.sunilpatel.co.uk/thesis-template/)
+%
+% Template license:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[
+12pt, % The default document font size, options: 10pt, 11pt, 12pt
+%oneside, % Two side (alternating margins) for binding by default, uncomment to switch to one side
+english, % ngerman for German
+doublespacing, % doublespacing singlespacing,Single line spacing, alternatives: onehalfspacing or doublespacing
+%draft, % Uncomment to enable draft mode (no pictures, no links, overfull hboxes indicated)
+%nolistspacing, % If the document is onehalfspacing or doublespacing, uncomment this to set spacing in lists to single
+liststotoc, % Uncomment to add the list of figures/tables/etc to the table of contents
+toctotoc, % Uncomment to add the main table of contents to the table of contents
+%parskip, % Uncomment to add space between paragraphs
+%nohyperref, % Uncomment to not load the hyperref package
+%headsepline, % Uncomment to get a line under the header
+%chapterinoneline, % Uncomment to place the chapter title next to the number on one line
+%consistentlayout, % Uncomment to change the layout of the declaration, abstract and acknowledgements pages to match the default layout
+]{MastersDoctoralThesis} % The class file specifying the document structure
+
+% \documentclass[12pt,a4paper,oneside,bold]{thesis}
+\usepackage[titletoc]{appendix}
+\usepackage{amsmath}
+\usepackage[utf8]{inputenc} % Required for inputting international characters
+\usepackage[T1]{fontenc} % Output font encoding for international characters
+\usepackage{setspace}
+\usepackage{array}
+\usepackage{wrapfig}
+\usepackage{multirow}
+\usepackage{tabu}
+\usepackage{mathpazo} % Use the Palatino font by default
+\usepackage{subcaption}
+\usepackage{makecell} %addedsadat
+\usepackage{diagbox}   %addedsada
+\usepackage[ruled,vlined]{algorithm2e} %addedsada
+% \usepackage{fancyhdr} 
+% \fancyhf{}
+% \cfoot{\thepage}
+% \pagestyle{fancy} 
+%\usepackage[backend=bibtex,style=authoryear,natbib=true]{biblatex} % %Use the bibtex backend with the authoryear citation style (which %resembles APA)
+
+%\addbibresource{example.bib} % The filename of the bibliography
+
+%\usepackage[autostyle=true]{csquotes} % Required to generate %language-dependent quotes in the bibliography
+
+%----------------------------------------------------------------------------------------
+%	MARGIN SETTINGS
+%----------------------------------------------------------------------------------------
+%\usepackage[margin=1in]{geometry}
+\usepackage[a4paper,left=1in,top=1in,right=1in,bottom=1in,nohead]{geometry}
+% \geometry{
+% 	paper=a4paper, % Change to letterpaper for US letter
+% 	inner=2.5cm, % Inner margin
+% 	outer=3.8cm, % Outer margin
+% 	bindingoffset=.5cm, % Binding offset
+% 	top=1.5cm, % Top margin
+% 	bottom=1.5cm, % Bottom margin
+% 	%showframe, % Uncomment to show how the type block is set on the page
+% }
+%\usepackage{acronym} 
+%--------------------------------------------------%	THESIS INFORMATION
+%--------------------------------------------------
+\thesistitle{Communications Using Deep Learning Techniques} % Your thesis title, this is used in the title and abstract, print it elsewhere with \title
+\supervisor{Prof. Gary J Saulnier}
+%\supervisor{Dr. Hany \textsc{Elgala}} % Your supervisor's name, this is used in the title page, print it elsewhere with \supname
+
+\degree{Masters of Science} % Your degree name, this is used in the title page and abstract, print it elsewhere with \degreename
+\author{Sadat Shahriar}
+%\author{Priti \textsc{Pachpande}} % Your name, this is used in the title page and abstract, print it elsewhere with \authorname
+
+
+\keywords{} % Keywords for your thesis, this is not currently used anywhere in the template, print it elsewhere with \keywordnames
+
+\department{Department of Electrical and Computer Engineering} % Your department's name and URL, this is used in the title page and abstract, print it elsewhere with \deptname
+% \group{\href{http://researchgroup.university.com}{Research Group Name}} % Your research group's name and URL, this is used in the title page, print it elsewhere with \groupname
+% \faculty{\href{http://faculty.university.com}{Faculty Name}} % Your faculty's name and URL, this is used in the title page and abstract, print it elsewhere with \facname
+
+\AtBeginDocument{
+\hypersetup{pdftitle=\ttitle} % Set the PDF's title to your title
+\hypersetup{pdfauthor=\authorname} % Set the PDF's author to your name
+\hypersetup{pdfkeywords=\keywordnames} % Set the PDF's keywords to your keywords
+}
+
+\begin{document}
+\frontmatter % Use roman page numbering style (i, ii, iii, iv...) for the pre-content pages
+
+\pagestyle{plain} % Default to the plain heading style until the thesis style is called for the body content
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\begin{titlepage}
+\begin{center}
+
+\vspace*{.06\textheight}
+
+
+%\textsc{\Large Master Thesis}\\[0.5cm] % Thesis type
+
+%\HRule \\[0.4cm] % Horizontal line
+%{\huge \bfseries COMMUNICATIONS USING DEEP LEARNING TECHNIQUES }\vspace{0.5cm} 
+{\huge Emotion Forecasting in Dyadic Conversation: Characterizing and Predicting Future Emotion with Audio-Visual Information Using Deep Learning
+ }\vspace{0.4cm} 
+%{\huge \bfseries \ttitle\par}\vspace{0.4cm} % Thesis title
+%\HRule \\[1.5cm] % Horizontal line
+ \vfill
+\begin{minipage}[t]{0.4\textwidth}
+\begin{center}
+\vspace{15pt}
+%\emph{Author:}\\
+\large{by}
+\vspace{10ex}
+\date{}
+%\href{http://www.johnsmith.com}{\authorname} % Author name - remove the \href bracket to remove the link
+\end{center} \large
+\end{minipage}
+
+\vfill
+\begin{minipage}[t]{0.4\textwidth}
+\begin{center}
+    
+
+%\emph{Author:}\\
+
+\large\authorname
+\date{}
+%\href{http://www.johnsmith.com}{\authorname} % Author name - remove the \href bracket to remove the link
+\end{center} \large
+\end{minipage}
+\begin{minipage}[t]{0.4\textwidth}
+%\begin{flushright} \large
+%\emph{Supervisor:} \\
+%{\supname}
+%\href{http://www.jamessmith.com}{\supname} % Supervisor name - remove the \href bracket to remove the link  
+%\end{flushright}
+\end{minipage}\\[1cm]
+ 
+\vfill
+ 
+
+{A Thesis\\
+Submitted to the University at Albany, State University of New York\\
+In Partial Fulfillment of \\
+the Requirements for the Degree of\\
+\degreename}\\[0.3cm] % University requirement text
+%\textit{in the}\\[0.4cm]
+\vfill
+\ University at Albany\\%[1cm] % University name
+\ College of Engineering and Applied Sciences\\
+\ Department of Electrical and Computer Engineering\\[1cm] % Research group name and department name
+
+\large \ 2019\\%[4cm] % Date
+% %\includegraphics{Logo} % University/department logo - uncomment to place it
+ 
+\vfill
+\end{center}
+\end{titlepage}
+\let\cleardoublepage\clearpage
+
+%	ABSTRACT PAGE
+%----------------------------------------------------------------------
+\begin{abstract}
+\addchaptertocentry{\abstractname} % Add the %acknowledgements to the table of contents
+\par Emotion forecasting is the task of predicting the future emotion of a speaker---i.e., the emotion label of the future speaking turn--based on the speaker's past and current audio-visual cues. Emotion forecasting systems require new problem formulations that differ from traditional emotion recognition systems.  
+In this thesis, we first explore two types of \textit{forecasting windows} (i.e., analysis windows for which the speaker's emotion is being forecasted): utterance forecasting and time forecasting. Utterance forecasting is based on speaking turns and forecasts what the speaker's emotion will be after one, two, or three speaking turns. Time forecasting forecasts what the speaker's emotion will be after a certain range of time, such as 3--8, 8--13, and 13--18 seconds. We then investigate the benefit of using the past audio-visual cues in addition to the current utterance. We design emotion forecasting models using deep learning. We compare the performances of FC-DNN, D-LSTM, and D-BLSTM which allows us to examine the benefit of modeling dynamic patterns in emotion forecasting tasks. Our experimental results on the IEMOCAP benchmark dataset demonstrate that D-BLSTM and D-LSTM outperform FC-DNN by up to 2.42\% in unweighted recall. When using both the current and past utterances,  deep dynamic models show an  improvement of up to 2.39\% compared to their performance when using only the current utterance. 
+We further analyze the benefit of using current and past utterance information compared to using the current and randomly chosen utterance information, and we find the performance improvement rises to 7.53\%. 
+The novelty in this study comes from its formulation of emotion forecasting problems and the understanding of how current and past audio-visual cues reveal future emotional information.
+
+
+
+\end{abstract}
+
+
+%	ACKNOWLEDGEMENTS
+%----------------------------------------------------------------------
+
+\begin{acknowledgements}
+\addchaptertocentry{\acknowledgementname} % Add the %acknowledgements to the table of contents
+\par First and foremost, I would like to sincerely thank my advisor, Professor Gary J Saulnier, for his continuous support and guidance throughout many difficult phases of my journey for the Master's degree. This
+thesis would not have been possible without his support and I can never thank
+him enough for that. I would also like to express my gratitude to Dr. Yelin Kim, lead scientist in Amazon Lab126, for her continuous mentorship throughout the year 2018, while she was an assistant professor at UAlbany. She taught me the true science of research, also pushing me to keep the high standards of my work with insightful and
+constructive comments. 
+
+I would also like to express my gratitude to my thesis committee members for their valuable time and comment on my thesis: Professor Daphney-Stavroula Zois and Professor Mohammed Agamy. My special thanks to Prof. Siwei Lyu, Prof. Feng Chen (UT, Dallas), and Prof. Kevin Knuth for their enormous inspiration which motivated me for conducting my research and reshaped my thought process. 
+
+My two years in Albany have been truly a joyful experience, and the beginning
+of priceless friendships with many inspiring people. I cannot thank enough my friends at UAlbany: Priti G. Pachpande, Mohammad Khaledur Rahman, Tasmia Haque, and Shihab Ahmed. I would like to thank the faculty and stuffs of department of Electrical and Computer engineering for the constant support and guidance. I owe my deepest gratitude to my wife Jannatul Ferdoush for encouraging me in every phase of the journey while tolerating segregation from me for more than a year. Above all, this thesis is dedicated to my wonderful parents, Shafiul Islam and Sayeda Begum, for being my life-long mentors. I also thank my sister Shifat Sharmin Paula for her endless love and support. Lastly, I greatly thank University at Albany and Google for the financial support without which  my persuasion of MS degree would not be possible.  
+
+
+\end{acknowledgements}
+
+%----------------------------------------------------------------------------------------
+%	LIST OF CONTENTS/FIGURES/TABLES PAGES
+%----------------------------------------------------------------------------------------
+\hypersetup{linkcolor=black}
+\tableofcontents % Prints the main table of contents
+
+\listoffigures % Prints the list of figures
+
+\listoftables % Prints the list of tables
+
+
+
+
+%----------------------------------------------------------------------------------------
+%	THESIS CONTENT - CHAPTERS
+%-----------------------------------------------------
+
+\mainmatter % Begin numeric (1,2,3...) page numbering
+
+\pagestyle{thesis} % Return the page headers back to the "thesis" style
+
+% Include the chapters of the thesis as separate files from the Chapters folder
+% Uncomment the lines as you write the chapters
+
+\include{Chapters/Chapter1}
+\include{Chapters/Chapter2} 
+\include{Chapters/Chapter3}
+\include{Chapters/Chapter4} 
+%\include{Chapters/Chapter5} 
+
+%----------------------------------------------------------------------------------------
+%	THESIS CONTENT - APPENDICES
+%----------------------------------------------------------------------------------------
+
+
+
+\end{document}  
