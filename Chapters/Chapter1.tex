@@ -22,7 +22,7 @@
 
 Emotion Forecasting is the task of predicting the future emotion by comprehending the current behavioral cues. The task of traditional emotion recognition problem is to identify the current emotional state of a speaker. On the contrary, Emotion forecasting predicts the future emotional state by leveraging the audio-visual behavioral analysis from the present emotional state. Emotion forecasting is an under-explored area in the field of affective computing and to the best of our knowledge, our work is the first one that formulate and characterize the emotion forecasting problem in the deep learning domain. 
 
-For an effective Human-Computer interaction, understanding emotional state is undeniably important. Using the audio-visual data, researchers have explored numerous aspects of emotion recognition and stepped towards more human-centered technology\cite{bla2, bla1}. On that account, with the rapid growth of smart technologies, prediction of future emotion or emotion forecasting from the current emotional state can be a promising research area. For example, in the field of predicting suicidal tendencies, Glen et. al. analyzed the short-term risk and transition from suicidal thoughts to attempts \cite{suicide2}. Therefore, in the victim to support conversation, if an intelligent agent can be developed to predict the future behavior of a suspected victim, the suicidal approach can be detected in the thought level before it reaches to the attempt level. In support to that , the work of Korrapati et. al. on social network site based suicidal prediction suggests the need for a robust and automated process of predicting sucides \cite{suicide1}. Hence, the research area of multiple violent behavior prediction can be highly benefited from the research on emotion forecasting. Similarly, psychiatric research on predicting a patient's behavior like anxiety or panic disorder during psychotherapy can gain several advantages from the emotion forecasting research \cite{psy1, psy2}. For example, during a psychotherapy session, the chances of giving-up of the therapy or leaving the conversation can be predicted using emotion forecasting and thus, such situation can be prevented. 
+For an effective Human-Computer interaction, understanding emotional state is undeniably important. Using the audio-visual data, researchers have explored numerous aspects of emotion recognition and stepped towards more human-centered technology\cite{bla2, bla1}. On that account, with the rapid growth of smart technologies, prediction of future emotion or emotion forecasting from the current emotional state can be a promising research area. For example, in the field of predicting suicidal tendencies, Glen et. al. analyzed the short-term risk and transition from suicidal thoughts to attempts \cite{suicide2}. Therefore, in the victim to support conversation, if an intelligent agent can be developed to predict the future behavior of a suspected victim, the suicidal approach can be detected in the thought level before it reaches to the attempt level. In support to that , the work of Korrapati et. al. on social network site based suicidal prediction suggests the need for a robust and automated process of predicting sucides \cite{suicide1}. Similarly, psychiatric research on predicting a patient's behavior like anxiety or panic disorder during psychotherapy can gain several advantages from the emotion forecasting research \cite{psy1, psy2}. For example, during a psychotherapy session, the chances of giving-up of the therapy or leaving the conversation can be predicted using emotion forecasting and thus, such situation can be prevented. 
 
 Emotion forecasting also has the potential business application. In the sector of customer care and call centers, the possibility of of success in marketing and pertaining the service quality immensely depends on customer satisfaction. Thus, forecasting of customer emotion from conversational dialog can be tremendously handy. To illustrate, in a conversation with customer while marketing for a product, if the sales agent can forecast the customer's interest or indifference, he can decide to progress the conversation or drop the conversation before the indifference turns into boredom or disgust.  Emotion forecasting can also be used effectively for automated services like chat-bots, companion robots and various intelligent agents. For instance, the user's emotion forecasting capability of Siri or Alexa can help designing more emotion specific arrangements like music or tone of conversation to comfort the user \cite{siri,alexa}.
 
@@ -37,7 +37,7 @@ The following publications were a direct result of the work presented in this th
 
 \newpage
 \section{Problem Formulation}
-Emotion forecasting requires new problem formulation, setting-up of hypotheses, and investigation of different methods. Previous works have demonstrated the effectiveness of exploiting the temporal properties of time-varying signal for recognizing speech, emotion, and human-action \cite{speech_rec,baltru,action}.Traditional emotion recognition research showed that considering the temporal flow of emotion dynamics helps modeling the recognition system with improved accuracy \cite{kim_icassp_2013,Meta}.
+Emotion forecasting requires new problem formulation, setting-up of hypotheses, and investigation of different methods. Previous works have demonstrated the effectiveness of exploiting the temporal properties of time-varying signal for recognizing speech, emotion, and human-action \cite{speech_rec,baltru,action}. Traditional emotion recognition research showed that considering the temporal flow of emotion dynamics helps modeling the recognition system with improved accuracy \cite{kim_icassp_2013,Meta}.
 This produces the first research question: Can we utilize the underlying salient information in behavioral cues to predict the future emotion? In addition to that, can sequential pattern analysis produce better insight than static pattern analysis in this case? To address this question, we present a hypothesis: \textbf{(H1)} In a dyadic conversational dialog , considering the sequential learning of information can enhance the emotion forecasting performance than in static learning. 
 
 Previous research in the affective computing domain demonstrated that when multiple speaking utterance steps from previous steps are considered, the emotion is recognized with better performance \cite{Meta2}. This phenomena implies that emotion can occur in a longer range of time. Hence, we present our second research question: Can emotional history be useful for forecasting emotion? To address this question, we introduce the second hypothesis: \textbf{(H2)} In comparison with the history-less performance of emotion forecasting, if along with the current utterance, the previous utterance is also taken into account, emotion forecasting performance will be ameliorated.
@@ -70,7 +70,7 @@ Our second hypothesis is tested using UF-his and TF-his approaches. We explore t
 \begin{figure*}
 \centering
    \includegraphics[width=0.9\textwidth]{overall.pdf}
-\caption[Total process of emotion forecasting]{Total process of emotion forecasting. First, in block \textbf{(a)}, we extract the audio-visual features to bild up the data for emotion forecasting both in history-less and history-added setting. Next, we use static and dynamic model architecture to forecast four emotion categories. The facial figure is generated from \cite{IEMOCAP}.}
+\caption[Overall process of emotion forecasting]{Total process of emotion forecasting. First, in block \textbf{(a)}, we extract the audio-visual features to build up the data for emotion forecasting both in history-less and history-added setting. Next, we use static and dynamic model architecture to forecast four emotion categories. The facial figure is generated from \cite{IEMOCAP}.}
 \label{fig:overview}
 \end{figure*}
 
@@ -134,7 +134,7 @@ From the sessions, IEMOCAP is divided in dialogs, where the participants engage 
 \begin{figure*}
 \centering
    \includegraphics[width=0.9\textwidth]{Chapters/IEMOCAP_record.png}
-\caption[IEMOCAP recording]{A recording session of IEMOCAP database}
+\caption[A recording session of IEMOCAP database]{A recording session of IEMOCAP database}
 \label{fig:data_recording}
 \end{figure*}
 
@@ -467,6 +467,17 @@ where $o^\tau$ is the output gate that determines the contribution of  current c
 (h^\tau, c^\tau) = \mathcal{G}(x^\tau, h^{\tau-1}, c^{\tau-1})
 \]
 where $\mathcal{G}$ is the LSTM activation function. 
+
+
+\subsection{Bidirectional Long Short-Term Memory Network (BLSTM)}
+\label{BLSTM}
+\begin{figure*}
+\centering
+   \includegraphics[width=0.6\textwidth]{Chapters/BLSTM.png}
+\caption[Architecture of BLSTM]{Architecture of BLSTM }
+\label{fig:LSTM}
+\end{figure*}
+
 To process the input sequence in both forward and backward directions, the bidirectional LSTM (BLSTM) is used to capture the dynamics in both past and future samples.
 For BLSTM, $h^\tau$ will be composed of both the forward and backward directions, $h^\tau = [\overrightarrow{h^\tau}; \overleftarrow{h^\tau}]$ and it is defined as follows:
 \begin{align}
@@ -509,7 +520,7 @@ U=\{Utt_{1}^A, Utt_{2}^A, Utt_{3}^A...Utt_{n}^A\}
 \begin{figure}
 \centering
    \includegraphics[width=0.6\linewidth]{Chapters/cur.pdf}
-\caption[Two numerical solutions]{An example of emotion forecasting without history. Here, the data of $Utt_{1}^A$ will be used to forecast the emotion of the utterance $Utt_{3}^A$ .}
+\caption[An example of emotion forecasting without history]{An example of emotion forecasting without history. Here, the data of $Utt_{1}^A$ will be used to forecast the emotion of the utterance $Utt_{3}^A$ .}
 % \vspace{-0.3cm}
 \label{fig:historyless}
 \end{figure}
@@ -543,12 +554,13 @@ We conduct the history-added emotion forecasting using UF-his and TF-his approac
 \begin{figure}
 \centering
 \includegraphics[width=.6\linewidth]{Chapters/his.pdf}
-\caption[Two numerical solutions]{An example of emotion forecasting with added history from the previous utterance. Here to forecast the emotion of $Utt_{4}^A$ , the data of both $Utt_{1}^A$ and $Utt_{2}^A$  are used.  }
+\caption[An example of emotion forecasting with added history from the previous utterance]{An example of emotion forecasting with added history from the previous utterance. Here to forecast the emotion of $Utt_{4}^A$ , the data of both $Utt_{1}^A$ and $Utt_{2}^A$  are used.  }
 % \vspace{-0.75cm}
 \label{fig:history}
 \end{figure}
 % \vspace{-.25cm}
 
+\newpage
  \section{Experimental Setup }
 Our FC-DNN model contains three fully connected layers with 256 memory units and one output softmax layer.  The D-LSTM uses two LSTM layers with 128 memory units each. After that, an FC layer is used with RELU as activation and finally a softmax output layer is stacked with the network. The D-BLSTM is built up with similar architecture with the LSTM layers having 128 memory units in both direction.   For all FC-DNN, D-LSTM and D-BLSTM, a rectified linear unit (RELU) is used as the activation unit. We use a learning rate of 0.0001 with the adam \cite{adam} optimizer and a batch size of 128. We also use an early stopping criteria, where the training stops if the validation accuracy does not improve after ten consecutive epochs. 
 
@@ -635,6 +647,16 @@ Furthermore, instead of previous utterance, we add a randomly chosen utterance o
 
 The reason for D-BLSTM network's superior performance in both UF-his and TF-his experiments may be that, as a more complex modeling framework compared to the D-LSTM,  the D-BLSTM model can see both past and future information. Thus, by achieving the history information, it can achieve substantial information by moving in both directions. 
 
+
+
+\begin{figure*}
+\centering
+\includegraphics[width=.8\linewidth]{Chapters/compare.png}
+\caption[Comparison of performance using different forecasting windows, and deep-learning framework]{Comparison of performance using different forecasting windows, and deep-learning framework.}
+% \vspace{-0.75cm}
+\label{fig:compare}
+\end{figure*}
+
 %%%new style
 \begin{table}[h]
 \centering
@@ -668,48 +690,6 @@ TF-random 3 & 51.01 & 51.97 \\
 \end{table}
 
 
-
-%Table of similarity
-% \begin{table}[h]
-% \centering
-% \caption{The ratio of identical labels of forecasting and recognition, to all the forecasting labels for different forecasting windows (i.e., same-labels). 
-% }
-% \begin{tabular}{ l l}
-% \hline
-% \textbf{Forecasting Window} & \textbf{Same-labels} \\
-% \hline
-% \hline
-% UF 1 & 0.73 \\
-% UF 2 & 0.68\\
-% UF 3 & 0.64\\
-% \hline
-% TF 1 & 0.74\\
-% TF 2 & 0.71\\
-% TF 3 & 0.67\\
-% \hline
-% \end{tabular}
-% \label{table:similarity}
-% \end{table}
-
-% \begin{table}[h]
-% \centering
-% \caption{An example for the per-class recall score (\%), when the forecasting label is same with current emotional label. The example is taken from UF-cur 3 D-BLSTM result. `GT' refers to forecasting ground truth and `Predict' refers to forecasting labels predicted by the network. }
-% \begin{tabular}{|l||c|c|c|c|c||}\hline
-% \diagbox[width=7.5em]{\textbf{Predict} \\ \textbf{}}{\makecell{}\\\textbf{GT}} &
-%   \makecell{Angry} & \makecell{Happy} & Neutral & Sad \\ \hline
-% \hline
-% Angry & \textbf{65.66} &    19.25 &   12.08  &  3.02 \\
-% \hline
-% Happy &     6.72  &  \textbf{83.25}  & 6.60   & 3.42 \\
-% \hline
-% Neutral & 28.99 &  25.63 &    \textbf{36.55}  & 8.82 \\
-% \hline
-% Sad & 7.44  & 23.67 &    5.85   & \textbf{63.03} \\
-
-% \hline
-% \end{tabular}
-% \label{table:confusion}
-% \end{table}
 
 
 \section{Further Analysis}
@@ -762,11 +742,9 @@ Sad & 7.44  & 23.67 &    5.85   & \textbf{63.03} \\
 
 
 
-
-
 \newpage
 \chapter{Conclusion} 
-This paper describes the formulation of emotion forecasting techniques from current and past audio-visual data. For UF-cur and TF-cur approaches, we demonstrate the dynamic models (D-LSTM and D-BLSTM) always outperform the static model (FC-DNN). For the history added approaches (i.e., UF-his and TF-his), we use the  D-LSTM and D-BLSTM models and our findings show an enhanced forecasting performance in all the experiments comparing with the history-less technique (i.e., UF-cur and TF-cur). We further experiment with an added random utterance instead of the history, and the performance declined significantly, indicating the effectiveness of adding history information in emotion forecasting. The experimental results for testing \textbf{H1} and \textbf{H2} lead us to conclude that emotion forecasting can improve considerably if we forecast with a deep bidirectional dynamic model (D-BLSTM) and take a previous utterance along with the present utterance.
+This thesis describes the formulation of emotion forecasting techniques from current and past audio-visual data. For UF-cur and TF-cur approaches, we demonstrate the dynamic models (D-LSTM and D-BLSTM) always outperform the static model (FC-DNN). For the history added approaches (i.e., UF-his and TF-his), we use the  D-LSTM and D-BLSTM models and our findings show an enhanced forecasting performance in all the experiments comparing with the history-less technique (i.e., UF-cur and TF-cur). We further experiment with an added random utterance instead of the history, and the performance declined significantly, indicating the effectiveness of adding history information in emotion forecasting. The experimental results for testing \textbf{H1} and \textbf{H2} lead us to conclude that emotion forecasting can improve considerably if we forecast with a deep bidirectional dynamic model (D-BLSTM) and take a previous utterance along with the present utterance.
 
 One of the limitations of our work is that we have not tested if our proposed models are optimized for the emotion forecasting task.  Additionally, the deep learning framework can be sensitive and unstable. An extensive hyperparameter search can make the network less sensitive. Hence, investigating an optimized model with a comparatively stable framework would be our next research step. There can be several future research directions from this work. First, we focus only on the emotional flow of one speaker and do not consider the influence of the other speaker, while previous studies showed improvement of accuracy in emotion recognition, when the mutual influence was taken into account \cite{Mutual}. Hence, forecasting performance can be enhanced considerably, if the effect of other person's emotion is incorporated in the modeling process. Second, emotion can be highly contextual, which means emotional flow can be biased in different scenarios. Therefore, forecasting result can be improved by considering the context.
 
@@ -776,28 +754,13 @@ One of the limitations of our work is that we have not tested if our proposed mo
 \addcontentsline{toc}{chapter}{References} 
 \bibliographystyle{plain}
 \bibliography{example.bib}
-\backmatter
-   \chapter{Appendix}
-   \begin{center}
+% \backmatter
+%   \chapter{Appendix}
+%   \begin{center}
        
    
-\large\textbf{Intelligent Transportation based UWB Positioning and Connectivity}
-\end{center}
-\bigskip
-I worked on this research project for Center for Technology in Government (CTG) and Metropolitan Transportation Authority (MTA) under the guidance of Prof. Hany Elgala.
-Ultra-wide band (UWB) technology is a wireless radio system that uses a small
-amount of energy to transmit large amounts of data over a wide range of frequency bandwidths, allowing for ranging and localization at the same time. For guided urban automated transportation systems, to obtain an efficient and safe control and command system of trains and buses, it is essential to ensure reliable exchange of information between vehicles and infrastructure and to determine accurately and constantly the absolute localization of trains or buses. 
+% \large\textbf{Intelligent Transportation based UWB Positioning and Connectivity}
+% \end{center}
+% \bigskip
 
-This project provided a solution based on the UWB technology to: 
-\begin{itemize}
-
-\item Increase the positioning performances in terms of localization errors. \item Realize high-speed connectivity. \item Reduce the cost of installation and maintenance operations.
-\end{itemize}
-
- We conducted two trials on the UAlbany uptown campus: 
- \begin{enumerate}
-\item Along the circular shuttle bus route and 
-\item In the tunneling system on the basement level of the academic podium.
-\end{enumerate}
- I installed and setup the system in labs, tunnels and bus stops. Also, I conducted experiments and collected scientific measurements to understand the channel modelling and signal parameters \cite{uwb}.
 
